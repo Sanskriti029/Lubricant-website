@@ -38,7 +38,7 @@ export default function Products() {
 
   return (
     <>
-      <div className="px-4 py-12 text-center">
+      <div className="px-4 py-12 text-center bg-gray-100">
         <h1 className="mx-auto text-center text-5xl md:text-6xl font-extrabold text-[#1a4782] mb-8 tracking-tight">
           Wide Range of Products available
         </h1>
@@ -46,6 +46,7 @@ export default function Products() {
           src={Lubricants}
           alt="Lubricants"
           className="mx-auto rounded-lg bg-gray-200 object-cover shadow-lg"
+          
         />
       </div>
 
@@ -57,7 +58,7 @@ export default function Products() {
             {images.map((image) => (
               <div
                 key={image.id}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden"
+                className="bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden "
               >
                 <img
                   src={image.imageSrc}
