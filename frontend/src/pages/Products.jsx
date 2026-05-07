@@ -1,57 +1,89 @@
-import React from 'react';
+import React from "react";
+import call from "../assets/call.png";
+import twitter from "../assets/twitter.png";
+import instagram from "../assets/instagram.webp";
+import mail from "../assets/mail.png";
+import whatsapp from "../assets/whatsapp.png";
+import thumbnail6 from "../assets/thumbnail6.jpg";
+import Lubricants from "../assets/Lubricants products.jpg";
+import { products } from "../data/data";
 
-const images = Object.values(
-  import.meta.glob('./public/images/*.{png,jpg,jpeg,svg}', { eager: true })
-).map((mod, index) => ({
-  id: index,
-  imageSrc: mod.default,
-  imageAlt: `Image ${index + 1}`,
-  name: `Product ${index + 1}`,
-  href: "#",
-}));
+
+import { useNavigate } from "react-router-dom";
+
+const images = Object.entries(
+  import.meta.glob("../assets/images/*.{png,jpg,jpeg,svg}", { eager: true }),
+).map(([path, mod], index) => {
+  const fileName = path.split("/").pop();
+  const cleanName = fileName.replace(/\.[^/.]+$/, "");
+
+  const formattedName = cleanName
+    .replace(/[-_]/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+console.log(formattedName);
+  return {
+    id: index,
+    imageSrc: mod.default,
+    imageAlt: formattedName,
+    name: formattedName,
+    href: "#",
+
+  };
+  
+});
+
 
 export default function Products() {
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          {images.map((image) => (
-            <a key={image.id} href={image.href} className="group">
-              <img
-                alt={image.imageAlt}
-                src={image.imageSrc}
-                className="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75"
-              />
-              <h3 className="mt-4 text-sm text-gray-700">{image.name}</h3>
-            </a>
-          ))}
+    <>
+      <div className="px-4 py-12 text-center">
+        <h1 className="mx-auto text-center text-5xl md:text-6xl font-extrabold text-[#1a4782] mb-8 tracking-tight">
+          Wide Range of Products available
+        </h1>
+        <img
+          src={Lubricants}
+          alt="Lubricants"
+          className="mx-auto rounded-lg bg-gray-200 object-cover shadow-lg"
+        />
+      </div>
+
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-4 py-12">
+          <h2 className="text-2xl font-bold text-gray-800 mb-8">Products</h2>
+
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden"
+              >
+                <img
+                  src={image.imageSrc}
+                  alt={image.imageAlt}
+                  className="h-50 aspect-square w-full object-cover"
+                />
+
+                <div className="p-3">
+                  <h1 className="text-lg text-[#0B1F3A] font-bold truncate">
+                    {image.name}
+                  </h1>
+
+                  <button
+                    onClick={() => navigate(`/products/${image.id}`)}
+                    className="bg-[#0B1F3A] text-white py-2 px-4 rounded-lg hover:bg-[#0A1A30]"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-// export default function Products() {
-//   return (
-//     <div className="bg-white">
-//       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-//         <h2 className="sr-only">Products</h2>
-
-//         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-//           {images.map((image) => (
-//             <a key={image.id} href={image.href} className="group">
-//               <img
-//                 alt={image.imageAlt}
-//                 src={image.imageSrc}
-//                 className="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"
-//               />
-//               <h3 className="mt-4 text-sm text-gray-700">{image.name}</h3>
-//               {/* <p className="mt-1 text-lg font-medium text-gray-900">{image.price}</p> */}
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
 

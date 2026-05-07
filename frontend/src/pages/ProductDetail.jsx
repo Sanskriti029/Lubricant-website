@@ -1,19 +1,139 @@
-import { useParams } from "react-router-dom";
-import { products } from "../data/products";
+
+// import { useParams } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+// import { products } from "../data/data";
+
+// const images = Object.entries(
+//   import.meta.glob("../assets/images/*.{png,jpg,jpeg,svg}", { eager: true }),
+// ).map(([path, mod], index) => {
+//   const fileName = path.split("/").pop();
+//   const cleanName = fileName.replace(/\.[^/.]+$/, "");
+
+//   const formattedName = cleanName
+//     .replace(/[-_]/g, " ")
+//     .replace(/\b\w/g, (c) => c.toUpperCase());
+  
+//   return {
+//     id: index,
+//     imageSrc: mod.default,
+//     name: formattedName,
+//     // description:"",
+//     // packsize: "",
+//     // usage: "",
+//     // application: "",
+//     // lifetime: "",
+//     description: "High quality industrial lubricant",
+//     packsize: "Available in 1L, 5L, 20L, and 200L containers",
+//     usage: "Suitable for automotive, industrial, and marine applications",
+//     application: "Reduces friction and wear in engines and machinery",
+//     lifetime: "Up to 10,000 miles or 6 months, whichever comes first",
+//     features: "Enhanced performance and protection for demanding applications",
+//     ratings: 4.5,
+//   };
+// });
+
+// export default function ProductDetail() {
+//   const { id } = useParams();
+//   const product = images.find((p) => p.id == id);
+//   const navigate = useNavigate();
+//   if (!product) return <p>Product not found</p>;
+
+//   return (
+//     <div className="p-6 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-lg">
+//       <h1 className="text-3xl font-bold mt-6 mb-4"> Product details </h1>
+//       <img
+//         src={product.imageSrc}
+//         alt={product.name}
+//         className="w-full rounded-lg"
+//       />
+      
+
+//       <h1 className="text-3xl font-bold mt-6 mb-4">{product.name}</h1>
+
+//       <div className="flex flex-wrap gap-4 mt-4">
+//        {product.pack_sizes.map((size, index) => (
+//          <button
+//             key={index}
+//           >
+//             {size}
+// </button>
+//          ))}
+//        </div>
+      
+//       <p className="mt-4 text-gray-700 text-xl">Description: {product.description}</p>
+//       <li className="mt-4 text-gray-600">Pack Size: {product.packsize}</li>
+      
+//        <ul className="mt-6 space-y-3 text-gray-600">
+//          <li><strong>Usage:</strong> {product.usage}</li>
+//          <li><strong>Application:</strong> {product.application}</li>
+//          <li><strong>Lifetime:</strong> {product.lifetime}</li>
+//          <li><strong>Performance:</strong> {product.performance}</li>
+//          <li><strong>Features:</strong> {product.features}</li>
+//         <li><strong>Rating:</strong> ⭐ {product.rating}/5</li>
+//        </ul>
+//       <button
+//         onClick={() => navigate("/contact")}
+//         className="mt-6 bg-orange text-white px-6 py-3 rounded-lg"
+//       >
+//         Contact for Quote
+//       </button>
+//     </div>
+//   );
+// }
+
+
+import { useParams, useNavigate } from "react-router-dom";
+import { products } from "../data/data";
 
 export default function ProductDetail() {
   const { id } = useParams();
-  const product = products.find((p) => p.id == id);
+  const navigate = useNavigate();
+
+  const product = products.find((p) => p.id === id);
 
   if (!product) return <p>Product not found</p>;
 
   return (
-    <div className="p-6">
-      <img src={product.image} alt={product.name} />
-      <h1 className="text-2xl font-bold mt-4">{product.name}</h1>
-      <p className="mt-2">{product.description}</p>
+    <div className="p-6 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-lg">
+      <h1 className="text-3xl font-bold mt-6 mb-4">Product Details</h1>
 
-      <button className="mt-4 bg-orange text-white px-4 py-2 rounded">
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-full rounded-lg"
+      />
+
+      <h1 className="text-3xl font-bold mt-6 mb-4">{product.name}</h1>
+
+      {/* pack sizes */}
+      <div className="flex flex-wrap gap-4 mt-4">
+        {product.pack_sizes.map((size, index) => (
+          <button
+            key={index}
+            className="border px-4 py-2 rounded bg-white"
+          >
+            {size}
+          </button>
+        ))}
+      </div>
+
+      <p className="mt-4 text-gray-700 text-xl">
+        Description: {product.description}
+      </p>
+
+      <ul className="mt-6 space-y-3 text-gray-600">
+        <li><strong>Usage:</strong> {product.usage}</li>
+        <li><strong>Application:</strong> {product.application}</li>
+        <li><strong>Lifetime:</strong> {product.lifetime}</li>
+        <li><strong>Performance:</strong> {product.performance}</li>
+        <li><strong>Features:</strong> {product.features}</li>
+        <li><strong>Rating:</strong> ⭐ {product.rating}/5</li>
+      </ul>
+
+      <button
+        onClick={() => navigate("/contact")}
+        className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg"
+      >
         Contact for Quote
       </button>
     </div>
