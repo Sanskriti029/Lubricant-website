@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import call from "../assets/call.png";
 import twitter from "../assets/twitter.png";
 import instagram from "../assets/instagram.webp";
@@ -7,34 +7,23 @@ import whatsapp from "../assets/whatsapp.png";
 import thumbnail6 from "../assets/thumbnail6.jpg";
 import Lubricants from "../assets/Lubricants products.jpg";
 import { products } from "../data/data";
-
-
 import { useNavigate } from "react-router-dom";
 
-const images = Object.entries(
-  import.meta.glob("../assets/images/*.{png,jpg,jpeg,svg}", { eager: true }),
-).map(([path, mod], index) => {
-  const fileName = path.split("/").pop();
-  const cleanName = fileName.replace(/\.[^/.]+$/, "");
-
-  const formattedName = cleanName
-    .replace(/[-_]/g, " ")
-    .replace(/\b\w/g, (c) => c.toUpperCase());
-console.log(formattedName);
-  return {
-    id: index,
-    imageSrc: mod.default,
-    imageAlt: formattedName,
-    name: formattedName,
-    href: "#",
-
-  };
-  
-});
+const filteritems=[];
 
 
 export default function Products() {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const categories = ['All', ...new Set(products.map(p => p.category))];
+
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <>
@@ -46,33 +35,54 @@ export default function Products() {
           src={Lubricants}
           alt="Lubricants"
           className="mx-auto rounded-lg bg-gray-200 object-cover shadow-lg"
-          
         />
       </div>
 
       <div className="bg-gray-50 min-h-screen">
+        <div className="bg-red-500 max-w-7xl px-4 py-12 ">
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full p-2 border border-gray-300 rounded-lg"
+            />
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`py-2 px-4 rounded-lg ${selectedCategory === category ? 'bg-[#0B1F3A] text-white' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className="mx-auto max-w-7xl px-4 py-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-8">Products</h2>
-
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {images.map((image) => (
+            {filteredProducts.map((product) => (
               <div
-                key={image.id}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden "
+                key={product.id}
+                className="bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden"
               >
                 <img
-                  src={image.imageSrc}
-                  alt={image.imageAlt}
+                  src={product.image}
+                  alt={product.name}
                   className="h-50 aspect-square w-full object-cover"
                 />
 
                 <div className="p-3">
                   <h1 className="text-lg text-[#0B1F3A] font-bold truncate">
-                    {image.name}
+                    {product.name}
                   </h1>
 
                   <button
-                    onClick={() => navigate(`/products/${image.id}`)}
+                    onClick={() => navigate(`/products/${product.id}`)}
                     className="bg-[#0B1F3A] text-white py-2 px-4 rounded-lg hover:bg-[#0A1A30]"
                   >
                     View Details
@@ -86,5 +96,3 @@ export default function Products() {
     </>
   );
 }
-
-

@@ -106,11 +106,11 @@ export default function ProductDetail() {
       <h1 className="text-3xl font-bold mt-6 mb-4">{product.name}</h1>
 
       {/* pack sizes */}
-      <div className="flex flex-wrap gap-4 mt-4">
+      <div className="flex flex-wrap gap-4 mt-4 ">
         {product.pack_sizes.map((size, index) => (
           <button
             key={index}
-            className="border px-4 py-2 rounded bg-white"
+          className=" px-4 py-2 rounded bg-white border border:hover:bg-blue-200"
           >
             {size}
           </button>
@@ -132,7 +132,7 @@ export default function ProductDetail() {
 
       <button
         onClick={() => navigate("/contact")}
-        className="mt-6 bg-orange-500 text-white px-6 py-3 rounded-lg"
+        className="mt-6 bg-blue-500 text-white px-6 py-3 rounded-lg"
       >
         Contact for Quote
       </button>
