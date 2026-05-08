@@ -8,7 +8,7 @@ import thumbnail6 from "../assets/thumbnail6.jpg";
 import Lubricants from "../assets/Lubricants products.jpg";
 import { products } from "../data/data";
 import { useNavigate } from "react-router-dom";
-
+import { FaSearch } from "react-icons/fa";
 const filteritems=[];
 
 
@@ -39,7 +39,7 @@ export default function Products() {
       </div>
 
       <div className="bg-gray-50 min-h-screen">
-        <div className="bg-red-500 max-w-7xl px-4 py-12 ">
+        <div className="bg-red-500 max-w-10xl px-4 py-12 ">
           <div className="mb-4">
             <input
               type="text"
@@ -47,7 +47,7 @@ export default function Products() {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full p-2 border border-gray-300 rounded-lg"
-            />
+            /><FaSearch />
           </div>
           <div className="flex flex-wrap gap-2">
             {categories.map(category => (

@@ -48,6 +48,8 @@ export const products = [
   {
     id: "0",
     name: "HP Milcy 20W 40",
+    category: "Automotive Engine Oil",
+    category: "Heavy Duty Diesel Engine Oils",
     description:
       "Premium multi-grade diesel engine oil providing excellent protection against wear and deposits.",
     pack_sizes: ["1L", "5L", "10L", "20L", "210L"],
@@ -63,6 +65,7 @@ export const products = [
   // {
   //   id: "1",
   //   name: "Enklo 46 Premium",
+  // category: "Industrial Oils",
   //   description:
   //     "High-performance hydraulic oil with superior anti-wear properties.",
   //   pack_sizes: ["20L", "210L"],
@@ -93,6 +96,7 @@ export const products = [
   {
     id: "3",
     name: "HP AP 3 Grease",
+    category:"Automatic Greases",
     description:
       "All-purpose lithium-base grease with a high drop point.",
     pack_sizes: ["500g", "1kg", "5kg", "18kg", "180kg"],
@@ -108,6 +112,7 @@ export const products = [
   {
     id: "4",
     name: "Elasto 245",
+    category:"Rubber Process Oils",
     description:
       "Specialized rubber process oil used as a rubber extender.",
     pack_sizes: ["210L", "Bulk Tanker"],
@@ -123,6 +128,8 @@ export const products = [
   {
     id: "5",
     name: "Enklo 32",
+    category:"Hyaduralic oils",
+    category:"Industrial Oils",
     description:
       "Anti-wear hydraulic oils for moderate to severe conditions.",
     pack_sizes: ["20L", "210L"],
@@ -138,6 +145,8 @@ export const products = [
   {
     id: "6",
     name: "Enklo 46",
+    category:"Hyaduralic oils",
+    category:"Industrial Oils",
     description:
       "Anti-wear hydraulic oils for moderate to severe conditions.",
     pack_sizes: ["20L", "210L"],
@@ -153,6 +162,8 @@ export const products = [
   {
     id: "7",
     name: "Enklo 68",
+    category:"Hyaduralic oils",
+    category:"Industrial Oils",
     description:
       "Anti-wear hydraulic oils for moderate to severe conditions.",
     pack_sizes: ["20L", "210L"],
@@ -168,6 +179,8 @@ export const products = [
   {
     id: "8",
     name: "Enklo HLP 1",
+    category:"Hyaduralic oils",
+    category:"Industrial Oils",
     description:
       "Premium hydraulic oils with exceptional oxidation stability.",
     pack_sizes: ["20L", "210L"],
@@ -183,6 +196,8 @@ export const products = [
   {
     id: "9",
     name: "Enklo HLP 2",
+    category:"Hydraulic oils",
+    category:"Industrial Oils",
     description:
       "Premium hydraulic oils with exceptional oxidation stability.",
     pack_sizes: ["20L", "210L"],
@@ -198,6 +213,7 @@ export const products = [
   // {
   //   id: "10",
   //   name: "Gear Oil EP 140",
+    //categorty:"Gear and Transmisson oils",
   //   description:
   //     "Extreme pressure gear oil for high load manual transmissions.",
   //   pack_sizes: ["1L", "5L", "20L", "210L"],
@@ -213,6 +229,7 @@ export const products = [
   // {
   //   id: "11",
   //   name: "Gear Oil 80W 90",
+  //categorty:"Gear and Transmisson oils",
   //   description:
   //     "Multi-grade gear lubricant for smooth gear shifting.",
   //   pack_sizes: ["1L", "5L", "20L", "210L"],
@@ -227,7 +244,10 @@ export const products = [
 
   {
     id: "12",
-    name: "Lithon 3",
+    name: "Lithon EP2",
+    category:"Refrigeration compression oils",
+    category:"Industrial Oils",
+    category:"Automatic Greases",
     description:
       "High-quality lithium soap-based multipurpose grease.",
     pack_sizes: ["1kg", "5kg", "18kg", "180kg"],
@@ -243,6 +263,7 @@ export const products = [
   {
     id: "13",
     name: "Metaquench 39",
+    category:"Quenching Oils",
     description:
       "Quenching oils for professional heat treatment of steel.",
     pack_sizes: ["210L"],
@@ -258,6 +279,7 @@ export const products = [
   {
     id: "14",
     name: "Metaquench 42",
+    category:"Quenching Oils",
     description:
       "Quenching oils for professional heat treatment of steel.",
     pack_sizes: ["210L"],
@@ -273,6 +295,7 @@ export const products = [
   {
     id: "15",
     name: "Parthan EP",
+    category:"Industrial Oils",
     description:
       "Industrial gear oil with high load-carrying capacity.",
     pack_sizes: ["20L", "210L"],
@@ -288,6 +311,7 @@ export const products = [
   {
     id: "16",
     name: "Plutek 1 / 2",
+    category:"Automatic Greases",
     description:
       "Lubricants for pneumatic tools and rock drills.",
     pack_sizes: ["20L", "210L"],
@@ -303,6 +327,8 @@ export const products = [
   {
     id: "17",
     name: "Seetul",
+    category:"Refrigeration compression oils",
+    category:"Industrial Oils",
     description:
       "Premium refrigeration compressor oils.",
     pack_sizes: ["20L", "210L"],
@@ -318,6 +344,7 @@ export const products = [
   {
     id: "18",
     name: "Trimofin 20",
+    category:"Metal Working Fluids",
     description:
       "Neat cutting oil for machining metals.",
     pack_sizes: ["20L", "210L"],
@@ -333,6 +360,7 @@ export const products = [
   {
     id: "19",
     name: "Drawmet",
+    category:"Metal Drawing Compounds",
     description:
       "Metal drawing lubricants for superior finishes.",
     pack_sizes: ["20L", "210L"],
@@ -348,6 +376,7 @@ export const products = [
   {
     id: "20",
     name: "Futurx",
+    category:"Futurx",
     description:
       "Synthetic engine oil for modern passenger cars.",
     pack_sizes: ["1L", "3L", "5L"],
@@ -363,6 +392,8 @@ export const products = [
   {
     id: "21",
     name: "HDX",
+    category:"Automotive Oils",
+    category:"Heavy Duty Diesel Engine Oils",
     description:
       "Heavy-duty diesel engine oil.",
     pack_sizes: ["1L", "5L", "20L", "210L"],
@@ -378,6 +409,7 @@ export const products = [
   {
     id: "22",
     name: "HP Hytherm 600",
+    category:"Thermic Fluids",
     description:
       "Premium thermic fluid for heat transfer systems.",
     pack_sizes: ["20L", "210L"],
@@ -393,6 +425,8 @@ export const products = [
   {
     id: "23",
     name: "HP Hycom",
+    category:"Industrial Oils",
+    category:"Compressor oil",
     description:
       "High-quality compressor oils.",
     pack_sizes: ["20L", "210L"],
@@ -408,6 +442,7 @@ export const products = [
   {
     id: "24",
     name: "HP Milcy Power",
+    category:"Heavy Duty Diesel Engine Oils",
     description:
       "Premium multi-grade diesel engine oil.",
     pack_sizes: ["1L", "5L", "10L", "20L", "210L"],
@@ -423,6 +458,8 @@ export const products = [
   {
     id: "25",
     name: "HP TransformOil",
+    category:"Transformer oils",
+    category:"Industrial Oils",
     description:
       "Electrical insulating transformer oil.",
     pack_sizes: ["210L", "Bulk Tanker"],
@@ -438,6 +475,7 @@ export const products = [
   {
     id: "26",
     name: "HP Rustop",
+    category:"Rust Preventives",
     description:
       "Premium rust preventive oil.",
     pack_sizes: ["20L", "210L"],
@@ -453,6 +491,7 @@ export const products = [
   {
     id: "27",
     name: "HP Racer",
+    category:"BS VI Grades",
     description:
       "High-performance motorcycle engine oil.",
     pack_sizes: ["800ml", "1L", "50L", "210L"],
@@ -467,6 +506,7 @@ export const products = [
   {
     "id": "28",
     "name": "HP Gear Oil EP 90",
+      category:"Gear and Transmisson oils",
     "description": "A multipurpose gear oil containing extreme pressure additives for moderate service conditions, ensuring smooth transmission performance.",
     "pack_sizes": ["1L", "5L", "20L", "26L", "210L"],
     "usage": "Manual transmissions of automobiles and moderate-duty industrial gear systems.",
@@ -480,6 +520,8 @@ export const products = [
   {
     "id": "29",
     "name": "HP Seetul N 68",
+    category:"Refrigeration compression oils",
+    category:"Industrial Oils",
     "description": "High-quality refrigeration compressor oil formulated from deep hydro-finished lube base stocks for superior chemical stability.",
     "pack_sizes": ["20L", "210L"],
     "usage": "Reciprocating and rotary refrigeration compressors in cold storage and refrigeration plants.",
@@ -493,6 +535,7 @@ export const products = [
   {
     "id": "30",
     "name": "HP Tisona",
+    category:"Automatic Greases",
     "description": "A high-quality agricultural spray oil specifically designed to control pests and diseases on fruit trees and plantation crops.",
     "pack_sizes": ["5L", "20L", "210L"],
     "usage": "Agricultural sector for crop protection.",
@@ -506,6 +549,7 @@ export const products = [
   {
     "id": "31",
     "name": "HP Trimofin 23 / 25",
+    category:"Metal Working Fluids",
     "description": "Premium neat cutting oils with varying levels of extreme pressure additives for different machining severities.",
     "pack_sizes": ["20L", "210L"],
     "usage": "Heavy-duty machining operations on ferrous metals.",
@@ -519,6 +563,7 @@ export const products = [
   {
     "id": "32",
     "name": "HP Multipurpose Grease 3",
+    category:"Automatic Greases",
     "description": "A high-quality lithium-base grease characterized by high drop point and excellent oxidation stability.",
     "pack_sizes": ["1kg", "2kg", "5kg", "18kg", "180kg"],
     "usage": "General purpose lubrication for automotive and industrial equipment.",
@@ -529,3 +574,4 @@ export const products = [
     "rating": 4.8,
     "image": imgmp3  }
 ];
+// parthan ep  futurx hdx hytherm 600 rustop

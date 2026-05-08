@@ -118,10 +118,11 @@ export default function ProductDetail() {
       </div>
 
       <p className="mt-4 text-gray-700 text-xl">
-        Description: {product.description}
+        <strong>Description: </strong>
+      {product.description}
       </p>
 
-      <ul className="mt-6 space-y-3 text-gray-600">
+      <ul className="mt-6 space-y-3 text-gray-600 text-lg">
         <li><strong>Usage:</strong> {product.usage}</li>
         <li><strong>Application:</strong> {product.application}</li>
         <li><strong>Lifetime:</strong> {product.lifetime}</li>
