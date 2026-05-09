@@ -1,19 +1,60 @@
-import React from 'react'
+import React from "react";
+import Aboutbg from "../assets/Aboutbg.png";
+import bg from "../assets/1.jpg";
+import h1 from "../assets/h1.jpg"; 
+import h2 from "../assets/h2.jpg"; 
+export default function About() {
+  return (
+    <>
+      <div className="px-4 py-12 text-center bg-gray-100">
+        <h1 className="mx-auto text-center text-5xl md:text-6xl font-extrabold text-[#1a4782] mb-8 tracking-tight">
+          About us
+        </h1>
+        <img
+          src={bg}
+          alt="Lubricants"
+          className="mx-auto min-w-full  rounded-lg bg-gray-200 object-cover shadow-lg"
+        />
+      </div>
+      <div className=" mx-auto min-w-full items-center text-xl bg-gray-200 rounded shadow-lg">
+        <div className="items-center justify-center p-4 m-4">
+          <p className="font-bold text-3xl justify-center items-center">Vikas Automobiles</p>
+        <p>
+          VIKAS AUTOMOBILES, SATNA  </p>
+          <p>HPCL LUBES C&F AGENT & DISTRIBUTOR </p>
+          <p>(SATNA,
+          REWA, SIDHI, SINGRAULI, PANNA, CHATTARPUR, TIKAMGARH)</p>
+        </div>
+      </div>
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-6xl grid md:grid-cols-2 gap-6">
+        {/* Google Map */}
+        <div className="bg-white rounded-2xl shadow-lg p-6">
+           <img src={h1} alt="head1"  />
+        </div>
+        <div className="bg-white rounded-2xl shadow-lg p-6">
+          <img src={h2} alt="h2" />
+        </div>
+        </div>
+        </div>
 
 
+    </>
+  );
+}
 
-const links = [
-  { name: 'Open roles', href: '#' },
-  { name: 'Internship program', href: '#' },
-  { name: 'Our values', href: '#' },
-  { name: 'Meet our leadership', href: '#' },
-]
-const stats = [
-  { name: 'Offices worldwide', value: '12' },
-  { name: 'Full-time colleagues', value: '300+' },
-  { name: 'Hours per week', value: '40' },
-  { name: 'Paid time off', value: 'Unlimited' },
-]
+// const links = [
+//   { name: 'Open roles', href: '#' },
+//   { name: 'Internship program', href: '#' },
+//   { name: 'Our values', href: '#' },
+//   { name: 'Meet our leadership', href: '#' },
+// ]
+// const stats = [
+//   { name: 'Offices worldwide', value: '12' },
+//   { name: 'Full-time colleagues', value: '300+' },
+//   { name: 'Hours per week', value: '40' },
+//   { name: 'Paid time off', value: 'Unlimited' },
+// ]
 
 // export default function About() {
 //   return (
@@ -77,21 +118,20 @@ const stats = [
 //   )
 // }
 
+// export default function About() {
+//   return (
+//   <>
 
-export default function About() {
-  return (
-  <>
- 
-    <div>About</div>
-    <div className="main">
-        <h1>Welcome to Vikas Automobiles</h1>
-        <p>Your trusted partner for quality automotive products and services. Explore our wide range of designed to meet
-            your needs.
-            25+ Years of Experience</p>
-    </div>
-    <div>Our partners 
-      <img src="assests/AccCement.jpg" alt="" />
-    </div>
-    </>
-  )
-}
+//     <div>About</div>
+//     <div className="main">
+//         <h1>Welcome to Vikas Automobiles</h1>
+//         <p>Your trusted partner for quality automotive products and services. Explore our wide range of designed to meet
+//             your needs.
+//             25+ Years of Experience</p>
+//     </div>
+//     <div>Our partners
+//       <img src="assests/AccCement.jpg" alt="" />
+//     </div>
+//     </>
+//   )
+// }

@@ -9,19 +9,21 @@ import Lubricants from "../assets/Lubricants products.jpg";
 import { products } from "../data/data";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-const filteritems=[];
-
+const filteritems = [];
 
 export default function Products() {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categories = ['All', ...new Set(products.map(p => p.category))];
+  const categories = ["All", ...new Set(products.map((p) => p.category))];
 
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
+  const filteredProducts = products.filter((product) => {
+    const matchesSearch = product.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "All" || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
@@ -39,22 +41,24 @@ export default function Products() {
       </div>
 
       <div className="bg-gray-50 min-h-screen">
-        <div className="bg-red-500 max-w-10xl px-4 py-12 ">
-          <div className="mb-4">
+        <div className="mx-4 max-w-8xl px-4 py-12 bg-red-500 rounded-lg border-gray-300">
+          <div className="mb-4 relative">
             <input
               type="text"
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg"
-            /><FaSearch />
+              className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+            />
+            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           </div>
+
           <div className="flex flex-wrap gap-2">
-            {categories.map(category => (
+            {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`py-2 px-4 rounded-lg ${selectedCategory === category ? 'bg-[#0B1F3A] text-white' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
+                className={`py-2 px-4 rounded-lg text-xl ${selectedCategory === category ? "bg-[#0B1F3A] text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300 text-xl"}`}
               >
                 {category}
               </button>

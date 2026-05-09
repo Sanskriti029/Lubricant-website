@@ -1,20 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo1.jpg";
-import { products } from "../data/data";
-import { useState } from "react";
-const filteritems=[];
+
 export default function Navbar() {
 
-  const [searchTerm, setSearchTerm] = useState('');
-  //  const [selectedCategory, setSelectedCategory] = useState('All');
- 
-   const categories = ['All', ...new Set(products.map(p => p.category))];
- 
-   const filteredProducts = products.filter(product => {
-     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
-    //  const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-    //  return matchesSearch && matchesCategory;
-   });
+  
 
   return (
     <nav className="bg-primary px-6 py-4 flex justify-between gap-4 text-white items-center font-bold text-xl">
@@ -28,13 +17,7 @@ export default function Navbar() {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/achievements">Achievements</Link>
-        <input
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full p-2 border border-gray-300 rounded-lg text-black"
-            />
+        
       </div>
 
     </nav>
