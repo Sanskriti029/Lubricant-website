@@ -94,24 +94,29 @@ export default function ProductDetail() {
   if (!product) return <p>Product not found</p>;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-lg">
+    <div className="px-8 py-1 mt-2 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-lg">
       <h1 className="text-3xl font-bold mt-6 mb-4">Product Details</h1>
 
       <img
         src={product.image}
         alt={product.name}
-        className="w-full rounded-lg"
+        className="w-full h-[500px] rounded-lg"
       />
 
       <h1 className="text-3xl font-bold mt-6 mb-4">{product.name}</h1>
 
       {/* pack sizes */}
-      <div className="flex flex-wrap gap-4 mt-4 ">
+      <div className="flex flex-wrap gap-4 mt-4 hover-bg-blue-500">
         {product.pack_sizes.map((size, index) => (
           <button
             key={index}
-          className=" px-4 py-2 rounded bg-white border border:hover:bg-blue-200"
-          >
+          className="relative bg-[#0B1F3A] text-white py-2 px-6 rounded-lg 
+                   transition-all duration-300
+                   hover:scale-105 active:scale-95
+                   after:content-[''] after:absolute after:-inset-1 after:rounded-lg 
+                   after:border-2 after:border-[#1a4782] after:opacity-0 
+                   hover:after:opacity-100 hover:after:-inset-2 after:transition-all">
+          
             {size}
           </button>
         ))}
@@ -133,7 +138,7 @@ export default function ProductDetail() {
 
       <button
         onClick={() => navigate("/contact")}
-        className="mt-6 bg-blue-500 text-white px-6 py-3 rounded-lg"
+        className="mt-6 mb-4 bg-[#0B1F3A] text-white px-6 py-3 rounded-lg"
       >
         Contact for Quote
       </button>

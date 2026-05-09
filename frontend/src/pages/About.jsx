@@ -1,44 +1,111 @@
 import React from "react";
 import Aboutbg from "../assets/Aboutbg.png";
 import bg from "../assets/1.jpg";
-import h1 from "../assets/h1.jpg"; 
-import h2 from "../assets/h2.jpg"; 
+import h1 from "../assets/h1.jpg";
+import h2 from "../assets/h2.jpg";
+import acccement from "../assets/AccCement.jpg";
+import Adani from "../assets/Adani-power-logo.png";
+import birla from "../assets/AdityaBirlaCement.jpg";
+import EssarPower from "../assets/EssarPower.png";
+import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
+import kjs from "../assets/kjs.png";
+import jcb from "../assets/jcb.jpg";
+import ultratech from "../assets/ub.png";
+import award from "../assets/awards9.jpeg";
+
 export default function About() {
   return (
     <>
-      <div className="px-4 py-12 text-center bg-gray-100">
-        <h1 className="mx-auto text-center text-5xl md:text-6xl font-extrabold text-[#1a4782] mb-8 tracking-tight">
-          About us
-        </h1>
-        <img
-          src={bg}
-          alt="Lubricants"
-          className="mx-auto min-w-full  rounded-lg bg-gray-200 object-cover shadow-lg"
-        />
+      <div className="px-4 py-16 text-center bg-gray-50">
+  <div className="max-w-6xl mx-auto">
+    <h1 className="text-5xl md:text-7xl font-black text-[#1a4782] mb-10 tracking-tighter">
+      About Us
+    </h1>
+    
+    <div className="relative group">
+      {/* Subtle border/glow effect for a premium feel */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-[#1a4782] to-blue-400 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+      
+      <img
+        src={bg}
+        alt="High-quality Lubricants"
+        className="relative mx-auto w-full h-[400px] md:h-[550px] rounded-xl object-cover shadow-2xl"
+      />
+    </div>
+  </div>
+</div>
+      <div className=" mx-auto min-w-full items-center text-xl bg-gray-200 rounded shadow-lg">
+        <div className=" flex flex-col items-center justify-center p-4 m-4">
+          <p className="font-extrabold text-4xl text-blue-900 tracking-tight underline ">
+            Vikas Automobiles
+          </p>
+          <p className="text-xl text-gray-600 p-4 ">
+            VIKAS AUTOMOBILES, SATNA
+          </p>
+          <p className="font-bold text-xl text-gray-800 ">
+            HPCL LUBES C&F AGENT & DISTRIBUTOR
+          </p>
+          <p className="text-lgfont-medium text-gray-700 ">
+            (SATNA,REWA, SIDHI, SINGRAULI, PANNA, CHATTARPUR, TIKAMGARH)
+          </p>
+        </div>
+      </div>
+
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+        <div className="w-full max-w-6xl grid md:grid-cols-2 gap-6">
+          {/* Google Map */}
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <img src={h1} alt="head1" />
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <h1  className="font-extrabold text-4xl text-blue-900 tracking-tight underline">  Welcome to Vikas Automobiles</h1>
+            <p>
+              Your trusted distributor and C&F agent
+              for HPCL Lubricants serving businesses across Satna, Rewa, Sidhi,
+              Singrauli, Panna, Chhatarpur, and Tikamgarh.
+              With years of
+              industry experience and a strong commitment to quality, we provide
+              reliable lubricant solutions for industrial, automotive, and
+              commercial applications. Located in Satna, Madhya Pradesh, we
+              specialize in supplying a wide range of HPCL industrial and
+              automotive lubricants designed to deliver superior performance,
+              efficiency, and engine protection. Our products are trusted by
+              leading industries and organizations, helping machines and
+              vehicles operate smoothly even under demanding conditions. At
+              Vikas Automobiles, customer satisfaction is at the heart of
+              everything we do. We focus on timely delivery, genuine products,
+              competitive pricing, and dependable service to build long-term
+              relationships with our clients. Our growing network of valued
+              customers includes major industrial and infrastructure companies
+              across the region. Backed by the strength and reliability of
+              Hindustan Petroleum Corporation Limited, we continue to support
+              industries, transport businesses, construction companies, and
+              commercial enterprises with high-quality lubrication solutions
+              tailored to their operational needs.
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <p> hello this is our webite in deveplopment phase</p>
+          </div>
+          <div className="bg-white rounded-2xl shadow-lg p-6">
+            <img src={award} alt="award" />
+          </div>
+        </div>
       </div>
       <div className=" mx-auto min-w-full items-center text-xl bg-gray-200 rounded shadow-lg">
-        <div className="items-center justify-center p-4 m-4">
-          <p className="font-bold text-3xl justify-center items-center">Vikas Automobiles</p>
-        <p>
-          VIKAS AUTOMOBILES, SATNA  </p>
-          <p>HPCL LUBES C&F AGENT & DISTRIBUTOR </p>
-          <p>(SATNA,
-          REWA, SIDHI, SINGRAULI, PANNA, CHATTARPUR, TIKAMGARH)</p>
+        <div className=" flex flex-col items-center justify-center p-4 m-4">
+          <p className="font-bold text-6xl ">Our Channel Partner</p>
+          <div className="  flex flex-row items-center justify-center p-4 m-4  space-x-6">
+            {/* <p>hello</p> */}
+            <img src={acccement} alt="acccement" />
+            <img src={Adani} alt="adani" />
+            <img src={birla} alt="birla" />
+            <img src={jcb} alt="jcb" />
+            <img src={kjs} alt="kjs" />
+            <img src={mpbirla} alt="mpbirla" />
+          </div>
         </div>
       </div>
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-      <div className="w-full max-w-6xl grid md:grid-cols-2 gap-6">
-        {/* Google Map */}
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-           <img src={h1} alt="head1"  />
-        </div>
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-          <img src={h2} alt="h2" />
-        </div>
-        </div>
-        </div>
-
-
     </>
   );
 }

@@ -9,10 +9,15 @@ import Lubricants from "../assets/Lubricants products.jpg";
 import { products } from "../data/data";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { useRef } from "react";
 const filteritems = [];
 
 export default function Products() {
   const navigate = useNavigate();
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const productsSectionRef = useRef(null);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
@@ -26,6 +31,18 @@ export default function Products() {
       selectedCategory === "All" || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+
+    // Trigger the scroll
+    if (productsSectionRef.current) {
+      productsSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <>
@@ -41,7 +58,7 @@ export default function Products() {
       </div>
 
       <div className="bg-gray-50 min-h-screen">
-        <div className="mx-4 max-w-8xl px-4 py-12 bg-red-500 rounded-lg border-gray-300">
+        <div className="mx-4 max-w-8xl px-4 py-12 bg-[#1a4782] rounded-lg border-gray-300">
           <div className="mb-4 relative">
             <input
               type="text"
@@ -53,12 +70,13 @@ export default function Products() {
             <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           </div>
 
-          <div className="flex flex-wrap gap-2">
+          <div ref={productsSectionRef} className="flex flex-wrap gap-2 ">
             {categories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`py-2 px-4 rounded-lg text-xl ${selectedCategory === category ? "bg-[#0B1F3A] text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300 text-xl"}`}
+                onClick={() => handleCategoryClick(category)}
+                className={`py-2 px-6 rounded-full transition-all duration-300 text-xl
+                   ${selectedCategory === category ? "bg-[#0B1F3A] text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300 text-xl"}`}
               >
                 {category}
               </button>
@@ -72,14 +90,15 @@ export default function Products() {
             {filteredProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden"
+                className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 grou"
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="h-50 aspect-square w-full object-cover"
-                />
-
+                <div className="overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-50 aspect-square w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
                 <div className="p-3">
                   <h1 className="text-lg text-[#0B1F3A] font-bold truncate">
                     {product.name}
@@ -87,7 +106,7 @@ export default function Products() {
 
                   <button
                     onClick={() => navigate(`/products/${product.id}`)}
-                    className="bg-[#0B1F3A] text-white py-2 px-4 rounded-lg hover:bg-[#0A1A30]"
+                    className="w-full bg-[#0B1F3A] text-white py-3 rounded-xl font-bold hover:bg-[#1a4782] transition duration-300 flex justify-center items-center gap-2"
                   >
                     View Details
                   </button>
