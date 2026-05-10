@@ -6,109 +6,143 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const linkStyle =
-    "block md:inline-block p-3 rounded-lg transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 text-center";
+    "px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:scale-105";
 
   return (
-    <nav className="bg-[#1a4782] px-6 py-4 text-white font-bold text-xl relative">
-      <div className="flex justify-between items-center max-w-7xl mx-auto">
-        {/* Left: Logo & Name */}
-        <div className="flex items-center gap-4">
-          <img
-            src={logo}
-            alt="Logo"
-            className="h-14 w-auto sm:h-16 md:h-20 object-contain"
-          />
-          <h1 className="hidden sm:block text-lg md:text-xl">
+    <nav className="bg-primary text-white shadow-md sticky top-0 z-50">
+      <div className="max-w-full mx-auto px-4">
+        
+        {/* Main Navbar */}
+        <div className="flex items-center justify-between h-24">
+
+          {/* Left Logo */}
+          <div className="flex items-center flex-shrink-0">
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-20 w-auto object-contain"
+            />
+          </div>
+
+          {/* Center Heading */}
+{/* Center Heading */}
+<div className="hidden lg:flex flex-1 justify-center px-6">
+  <h1 className="text-2xl xl:text-3xl font-bold tracking-wide text-center whitespace-nowrap">
+    Vikas Automobiles
+  </h1>
+  {/* <h1 className="text-2xl xl:text-3xl font-bold tracking-wide text-center whitespace-nowrap transition-all duration-300 hover:text-blue-200">
+  Vikas Automobiles
+</h1> */}
+</div>
+
+          {/* Desktop Links */}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-4 ml-auto text-base xl:text-lg font-semibold">
+            <Link to="/" className={linkStyle}>
+              Home
+            </Link>
+
+            <Link to="/products" className={linkStyle}>
+              Products
+            </Link>
+
+            <Link to="/about" className={linkStyle}>
+              About
+            </Link>
+
+            <Link to="/contact" className={linkStyle}>
+              Contact
+            </Link>
+
+            <Link to="/achievements" className={linkStyle}>
+              Achievements
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden ml-auto">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m-7 6h7"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Heading */}
+        <div className="md:hidden text-center pb-3">
+          <h1 className="text-2xl font-bold tracking-wide">
             Vikas Automobiles
           </h1>
         </div>
 
-        {/* Hamburger Icon for Mobile */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="focus:outline-none"
-          >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+        {/* Mobile Menu */}
+        <div
+          className={`${
+            isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
+          } overflow-hidden transition-all duration-500 md:hidden`}
+        >
+          <div className="flex flex-col gap-3 text-center text-lg font-semibold bg-blue-700 rounded-xl p-4">
+            
+            <Link
+              to="/"
+              className={linkStyle}
+              onClick={() => setIsOpen(false)}
             >
-              {isOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              )}
-            </svg>
-          </button>
-        </div>
+              Home
+            </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex space-x-2 lg:space-x-4">
-          <Link to="/" className={linkStyle}>
-            Home
-          </Link>
-          <Link to="/products" className={linkStyle}>
-            Products
-          </Link>
-          <Link to="/about" className={linkStyle}>
-            About
-          </Link>
-          <Link to="/contact" className={linkStyle}>
-            Contact
-          </Link>
-          <Link to="/achievements" className={linkStyle}>
-            Achievements
-          </Link>
-        </div>
-      </div>
+            <Link
+              to="/products"
+              className={linkStyle}
+              onClick={() => setIsOpen(false)}
+            >
+              Products
+            </Link>
 
-      {/* Mobile Menu Dropdown */}
-      <div
-        className={`${isOpen ? "block" : "hidden"} md:hidden mt-4 pb-4 space-y-2 border-t border-blue-400 pt-4`}
-      >
-        <Link to="/" className={linkStyle} onClick={() => setIsOpen(false)}>
-          Home
-        </Link>
-        <Link
-          to="/products"
-          className={linkStyle}
-          onClick={() => setIsOpen(false)}
-        >
-          Products
-        </Link>
-        <Link
-          to="/about"
-          className={linkStyle}
-          onClick={() => setIsOpen(false)}
-        >
-          About
-        </Link>
-        <Link
-          to="/contact"
-          className={linkStyle}
-          onClick={() => setIsOpen(false)}
-        >
-          Contact
-        </Link>
-        <Link
-          to="/achievements"
-          className={linkStyle}
-          onClick={() => setIsOpen(false)}
-        >
-          Achievements
-        </Link>
+            <Link
+              to="/about"
+              className={linkStyle}
+              onClick={() => setIsOpen(false)}
+            >
+              About
+            </Link>
+
+            <Link
+              to="/contact"
+              className={linkStyle}
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+
+            <Link
+              to="/achievements"
+              className={linkStyle}
+              onClick={() => setIsOpen(false)}
+            >
+              Achievements
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );
