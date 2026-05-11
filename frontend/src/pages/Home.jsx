@@ -55,8 +55,8 @@ export default function Home() {
             </p>
 
             <p className="mt-4 text-gray-300">
-              Delivering premium industrial oils, greases, hydraulic fluids,
-              and lubrication solutions for heavy industries and machinery.
+              Delivering premium industrial oils, greases, hydraulic fluids, and
+              lubrication solutions for heavy industries and machinery.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
@@ -119,11 +119,10 @@ export default function Home() {
       </section>
 
       {/* PRODUCTS SECTION */}
-      <section className="bg-gray-100 p-6 md:p-10 rounded-xl">
-        <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center underline">
+      <section className="bg-gray-100 p-6 md:p-10 rounded-xl space-y-6">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center underline">
           Our Products
         </h2>
-
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <img
@@ -138,6 +137,7 @@ export default function Home() {
                 equipment.
               </p>
             </div>
+            
           </div>
 
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
@@ -168,8 +168,15 @@ export default function Home() {
                 machinery.
               </p>
             </div>
+            
           </div>
         </div>
+         <button
+    className="bg-[#FFD700] hover:bg-yellow-400 transition text-black px-6 py-3 rounded-lg font-semibold w-full md:w-auto items-center"
+    onClick={() => navigate("/products")}
+  >
+    View All Products
+  </button>
       </section>
 
       {/* CUSTOMERS */}
@@ -206,9 +213,7 @@ export default function Home() {
             >
               <p className="italic">"{item.text}"</p>
 
-              <h3 className="font-bold mt-4 text-[#0B1F3A]">
-                - {item.name}
-              </h3>
+              <h3 className="font-bold mt-4 text-[#0B1F3A]">- {item.name}</h3>
             </div>
           ))}
         </div>
@@ -256,23 +261,11 @@ export default function Home() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <img
-            src={award1}
-            alt="Award 1"
-            className="rounded-xl shadow-md"
-          />
+          <img src={award1} alt="Award 1" className="rounded-xl shadow-md" />
 
-          <img
-            src={award9}
-            alt="Award 9"
-            className="rounded-xl shadow-md"
-          />
+          <img src={award9} alt="Award 9" className="rounded-xl shadow-md" />
 
-          <img
-            src={award4}
-            alt="Award 4"
-            className="rounded-xl shadow-md"
-          />
+          <img src={award4} alt="Award 4" className="rounded-xl shadow-md" />
         </div>
 
         <div className="text-center mt-8">
