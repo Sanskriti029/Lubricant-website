@@ -12,7 +12,11 @@ export default {
         text: "#111827",
         muted: "#6B7280",
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'], // Custom font
+      },
   },
   plugins: [],
 }
+
 };

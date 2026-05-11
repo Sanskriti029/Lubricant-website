@@ -38,7 +38,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="px-4 md:px-6 py-6 space-y-6">
+    <div className="px-4 md:px-6 py-6 space-y-6 font-poppins">
       {/* HERO SECTION */}
       <section className="bg-[#0B1F3A] text-white p-6 md:p-10 rounded-xl">
         <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -48,9 +48,9 @@ export default function Home() {
             </h1>
 
             <p className="mt-4 text-lg text-gray-200">
-              Trusted by industries across India with over{" "}
+              Trusted by industries across India with {" "}
               <span className="text-[#FFD700] font-bold">
-                20+ years of experience
+                25 years of experience
               </span>
             </p>
 
@@ -80,7 +80,7 @@ export default function Home() {
             <img
               src={logo1}
               alt="Industrial Lubricants"
-              className="rounded-xl w-full object-cover shadow-lg"
+              className="rounded-md w-full object-cover shadow-lg"
             />
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
           </div>
 
           <div className="bg-white p-5 rounded-xl shadow-md">
-            <h3 className="font-bold text-lg mb-2">20+ Years Experience</h3>
+            <h3 className="font-bold text-lg mb-2">25 Years Experience</h3>
             <p>
               Serving industries with trusted lubrication solutions for over two
               decades.
@@ -200,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="bg-[#0B1F3A] text-white p-6 md:p-10 rounded-xl">
+      {/* <section className="bg-[#0B1F3A] text-white p-6 md:p-10 rounded-xl">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           What Our Clients Say
         </h2>
@@ -217,7 +217,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* LOCATION */}
       <section className="bg-gray-100 p-6 md:p-10 rounded-xl">
