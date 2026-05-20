@@ -11,29 +11,26 @@ export default function Navbar() {
   return (
     <nav className="bg-primary text-white shadow-md sticky top-0 z-50">
       <div className="max-w-full mx-auto px-4">
-        
         {/* Main Navbar */}
         <div className="flex items-center justify-between h-24">
-
           {/* Left Logo */}
-          <div className="flex items-center flex-shrink-0">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-20 w-auto object-contain "
-            />
-          </div>
+          <div className="flex justify-center items-center py-3">
+  <img
+    src={logo}
+    alt="Logo"
+    className="h-16 sm:h-20 w-auto object-contain"
+  />
+</div>
 
           {/* Center Heading */}
-{/* Center Heading */}
-<div className="hidden lg:flex flex-1 justify-center px-6">
-  <h1 className="text-2xl xl:text-3xl font-bold tracking-wide text-center whitespace-nowrap">
-    Vikas Automobiles
-  </h1>
-  {/* <h1 className="text-2xl xl:text-3xl font-bold tracking-wide text-center whitespace-nowrap transition-all duration-300 hover:text-blue-200">
+          <div className="hidden lg:flex flex-1 justify-center px-6">
+            <h1 className="text-2xl xl:text-3xl font-bold tracking-wide text-center whitespace-nowrap">
+              Vikas Automobiles
+            </h1>
+            {/* <h1 className="text-2xl xl:text-3xl font-bold tracking-wide text-center whitespace-nowrap transition-all duration-300 hover:text-blue-200">
   Vikas Automobiles
 </h1> */}
-</div>
+          </div>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-2 xl:gap-4 ml-auto text-base xl:text-lg font-semibold">
@@ -95,18 +92,17 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
+        {/* Mobile Menu */}
         <div
           className={`${
-            isOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
+            isOpen ? "max-h-[500px] opacity-100 pb-4" : "max-h-0 opacity-0"
           } overflow-hidden transition-all duration-500 md:hidden`}
         >
+          {/* Logo */}
+          
+          {/* Menu Links */}
           <div className="flex flex-col gap-3 text-center text-lg font-semibold bg-blue-700 rounded-xl p-4">
-            
-            <Link
-              to="/"
-              className={linkStyle}
-              onClick={() => setIsOpen(false)}
-            >
+            <Link to="/" className={linkStyle} onClick={() => setIsOpen(false)}>
               Home
             </Link>
 

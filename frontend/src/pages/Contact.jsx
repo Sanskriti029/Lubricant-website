@@ -4,20 +4,83 @@ import twitter from "../assets/twitter.png";
 import instagram from "../assets/instagram.webp";
 import mail from "../assets/mail.png";
 import whatsapp from "../assets/whatsapp.png";
+import axios from "axios";
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+
+
+ const [form, setForm] = useState({
+  name: "",
+  email: "",
+  phone: "",
+  product: "",
+  quantity: "",
+  address: "",
+  message: "",
+});
+const products = [
+  "ENKLO 32",
+  "ENKLO 46",
+  "ENKLO 68",
+  "ENKLO 100",
+  "ENKLO 121",
+  "ENKLO 150",
+  "ENKLO 176",
+  "ENKLO 220",
+  "ENKLO 320",
+  "ENKLO 460",
+  "ENKLO HLP 22",
+  "ENKLO HLP 32",
+  "ENKLO HLP 46",
+  "WAYLUBE 68",
+  "WAYLUBE N68",
+  "PARTHAN EP 68",
+  "PARTHAN EP 100",
+  "PARTHAN EP 150",
+  "HP GEAR OIL XP 80 W 90",
+  "HYTAK 0",
+  "HYTAK 1",
+  "SEETUL 15",
+  "SEETUL 22",
+  "HP RACER 4",
+  "HP SN 150",
+  "HP SN 500",
+  "SPINTEK 5",
+  "SPINTEK 12",
+  "SPINTEK 15",
+  "SPINTEK 22",
+  "Other"
+];
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(form);
-    alert("Message sent!");
-    setForm({ name: "", email: "", phone: "", message: "" });
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/send-email",
+      form
+    );
+
+    alert(response.data.message);
+
+    setForm({
+      name: "",
+      email: "",
+      phone: "",
+      product: "",
+      quantity: "",
+      address: "",
+      message: "",
+    });
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send message");
+  }
+};
   return (
     <>
    
@@ -68,10 +131,38 @@ export default function Contact() {
               onChange={handleChange}
               className="w-full border rounded-lg p-2"
             />
+<select
+  name="product"
+  value={form.product}
+  onChange={handleChange}
+  className="w-full border rounded-lg p-2"
+>
+  <option value="">Select Product</option>
 
+  {products.map((product, index) => (
+    <option key={index} value={product}>
+      {product}
+    </option>
+  ))}
+</select>
+
+<select
+  name="quantity"
+  value={form.quantity}
+  onChange={handleChange}
+  className="w-full border rounded-lg p-2"
+>
+  <option value="">Quantity</option>
+
+  {[...Array(50)].map((_, index) => (
+    <option key={index + 1} value={index + 1}>
+      {index + 1}
+    </option>
+  ))}
+</select>
            
  {/* <label htmlFor="product" className="text-lg w-full font-bold mt-6">Select Product:</label> */}
-              <select name="product" id="product" className="w-full border rounded-lg p-2">
+              {/* <select name="product" id="product" className="w-full border rounded-lg p-2">
                <option value="">Select Product</option>
             <option value="ENKLO 32">ENKLO 32</option>
             <option value="ENKLO 46">ENKLO 46</option>
@@ -198,9 +289,9 @@ export default function Contact() {
             <option value="SPINTEK 15">SPINTEK 15</option>
             <option value="SPINTEK 22">SPINTEK 22</option>
             <option value="Other">Other</option>
-          </select>
+          </select> */}
            {/* <label htmlFor="quantity" className="text-lg w-full font-bold mt-6">Select Quantity:</label> */}
-           <select name="Quantity" id="Quantity" className="w-full border rounded-lg p-2">
+           {/* <select name="Quantity" id="Quantity" className="w-full border rounded-lg p-2">
 
             <option value=""> Quantity </option>
             <option value="01">01</option>
@@ -253,7 +344,7 @@ export default function Contact() {
             <option value="48">48</option>
             <option value="49">49</option>
             <option value="50">50</option>
-          </select>
+          </select> */}
           {/* <label htmlFor="Address" className="text-lg w-full font-bold mt-6">Delivery Address:</label> */}
           <textarea
               name="address"
