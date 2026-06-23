@@ -12,26 +12,65 @@ import kjs from "../assets/kjs.png";
 import jcb from "../assets/jcb.jpg";
 import ultratech from "../assets/ub.png";
 import award from "../assets/awards9.jpeg";
-
+import { useEffect } from "react";
 export default function About() {
+
+   useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, []);
   return (
     <>
-      <div className="px-4 py-16 text-center bg-gray-50">
+    <div className="px-4 py-6 text-center bg-gray-50 min-h-screen">
   <div className="max-w-6xl mx-auto">
-    <h1 className="text-5xl md:text-7xl font-black text-[#1a4782] mb-10 tracking-tighter">
+    <h1 className="mx-auto text-center text-4xl md:text-6xl font-extrabold text-[#1a4782] mt-2 mb-5 tracking-tight 
+    hover:animate-zoomIn underline
+  ">
       About Us
     </h1>
     
-    <div className="relative group">
-      {/* Subtle border/glow effect for a premium feel */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-[#1a4782] to-blue-400 rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-      
-      <img
-        src={bg}
-        alt="High-quality Lubricants"
-        className="relative mx-auto w-full h-[400px] md:h-[550px] rounded-xl object-cover shadow-2xl"
-      />
-    </div>
+    <div className="relative group w-full flex justify-center px-4">
+  
+  {/* Premium Glow Effect */}
+  <div
+    className="
+      absolute
+      -inset-1
+      bg-gradient-to-r
+      from-[#1a4782]
+      to-blue-400
+      rounded-2xl
+      blur-lg
+      opacity-20
+      group-hover:opacity-40
+      transition
+      duration-700
+    "
+  ></div>
+
+  {/* Image */}
+  <img
+    src={bg}
+    alt="High-quality Lubricants"
+    className="
+      relative
+      w-full
+      max-w-6xl
+      h-[250px]
+      sm:h-[350px]
+      md:h-[450px]
+      lg:h-[550px]
+      object-cover
+      rounded-2xl
+      shadow-2xl
+      transition-all
+      duration-500
+      group-hover:scale-[1.02]
+    "
+  />
+</div>
   </div>
 </div>
       <div className=" mx-auto min-w-full items-center text-xl rounded shadow-lg">
@@ -50,7 +89,7 @@ export default function About() {
           </p>
         </div>
       </div>
-<section className="bg-gray-100 p-6 md:p-10 rounded-xl">
+<section className="bg-gray-50 p-6 md:p-10 rounded-xl">
         <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center">
           Why Choose Us?
         </h2>
@@ -87,7 +126,7 @@ export default function About() {
         </div>
       </section>
 
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <div className="w-full max-w-6xl grid md:grid-cols-2 gap-6">
           {/* Google Map */}
           <div className="bg-white rounded-2xl shadow-lg p-6">
@@ -101,13 +140,13 @@ export default function About() {
               for HPCL Lubricants serving businesses across <span className="font-bold">Satna, Rewa, Sidhi,
               Singrauli, Panna, Chhatarpur, and Tikamgarh.</span>
               <br/>
-              <br/>
+              <br/></p>
             <p className="text-lg font-medium text-gray-700 mt-4">
               With years of <span className="font-bold"> 25 years of
               industry experience</span> and a strong commitment to quality, we provide
               reliable lubricant solutions for industrial, automotive, and
               commercial applications.</p>
-              <p className="text-lg font-medium text-gray-700 mt-4">    </p>
+              <p className="text-lg font-medium text-gray-700 mt-4">    
                Located in Satna, Madhya Pradesh, we
               specialize in supplying a wide range of HPCL industrial and
               automotive lubricants designed to deliver superior performance,
@@ -134,20 +173,75 @@ export default function About() {
           </div>
         </div>
       </div>
-      <div className=" mx-auto min-w-full items-center text-xl bg-gray-200 rounded shadow-lg">
-        <div className=" flex flex-col items-center justify-center p-4 m-4">
-          <p className="font-bold text-6xl ">Our Channel Partner</p>
-          <div className="  flex flex-row items-center justify-center p-4 m-4  space-x-6">
-            {/* <p>hello</p> */}
-            <img src={acccement} alt="acccement" />
-            <img src={Adani} alt="adani" />
-            <img src={birla} alt="birla" />
-            <img src={jcb} alt="jcb" />
-            <img src={kjs} alt="kjs" />
-            <img src={mpbirla} alt="mpbirla" />
-          </div>
-        </div>
-      </div>
+      <div className="w-full bg-gray-50 rounded-xl shadow-lg py-10 px-4">
+  <div className="max-w-7xl mx-auto text-center">
+    
+    {/* Heading */}
+    <p
+      className="
+        font-bold
+        text-3xl
+        sm:text-4xl
+        md:text-5xl
+        lg:text-6xl
+        text-gray-800
+        mb-10
+      "
+    >
+      Our Channel Partner
+    </p>
+
+    {/* Logos */}
+    <div
+      className="
+        grid
+        grid-cols-2
+        sm:grid-cols-3
+        md:grid-cols-4
+        lg:grid-cols-6
+        gap-6
+        items-center
+        justify-items-center
+      "
+    >
+      <img
+        src={acccement}
+        alt="acccement"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+
+      <img
+        src={Adani}
+        alt="adani"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+
+      <img
+        src={birla}
+        alt="birla"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+
+      <img
+        src={jcb}
+        alt="jcb"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+
+      <img
+        src={kjs}
+        alt="kjs"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+
+      <img
+        src={mpbirla}
+        alt="mpbirla"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+    </div>
+  </div>
+</div>
     </>
   );
 }

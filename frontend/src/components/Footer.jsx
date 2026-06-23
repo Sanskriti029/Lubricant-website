@@ -5,7 +5,7 @@ import { FaSquareWhatsapp } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 export default function Footer() {
-  const linkStyle = "hover:text-blue-400 transition-colors duration-300";
+  const linkStyle = "hover:text-blue-800 transition-colors duration-300";
 
   return (
     <div className="bg-[#0B1F3A] text-white px-4 py-8 rounded-t-2xl">
@@ -18,7 +18,9 @@ export default function Footer() {
           <p className="font-semibold text-lg">Vikas Automobiles</p>
 
           <p className="leading-relaxed text-gray-300">
-            Near Yadav Dharmkanta, Rewa Road,
+            Infront of Bajaj Finance Gahara Nala, 
+            <br />
+            <span className="block md:inline">Near Yadav Dharmkanta, Rewa Road,</span>
             <br />
             Satna, Madhya Pradesh - 485001
           </p>
@@ -33,14 +35,14 @@ export default function Footer() {
               <FaPhoneAlt className="text-red-400 text-lg" />
 
               <a
-                href="tel:+919827006016"
+                href="tel:+919827003016"
                 className="hover:text-red-400 transition-colors"
               >
-                +91 9827006016
+                +91 9827003016
               </a>
             </li>
             <li className="flex items-center justify-center md:justify-start gap-3">
-              <IoMail className="text-red-400 text-2xl" />
+              <IoMail className="hover:text-red-400 text-2xl" />
               <a href="mailto:hpclcfasatna@gmail.com">Email</a>
             </li>
 
@@ -48,7 +50,7 @@ export default function Footer() {
               <FaSquareWhatsapp className="text-green-400 text-2xl" />
 
               <a
-                href="https://wa.me/919827006016"
+                href="https://wa.me/919827003016"
                 className="hover:text-green-400 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -129,8 +131,8 @@ export default function Footer() {
 
         <p className="mt-2">
           Contact Us:
-          <a href="tel:+919827006016" className="ml-2 hover:text-yellow-400">
-            +91 9827006016
+          <a href="tel:+919827003016" className="ml-2 hover:text-yellow-400">
+            +91 9827003016
           </a>
         </p>
       </footer>

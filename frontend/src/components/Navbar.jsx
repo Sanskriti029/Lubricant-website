@@ -6,7 +6,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const linkStyle =
-    "px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-500 hover:scale-105";
+    "px-4 py-2 rounded-lg transition-all duration-300 hover:bg-blue-800 hover:scale-105";
 
   return (
     <nav className="bg-primary text-white shadow-md sticky top-0 z-50">

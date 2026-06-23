@@ -1,7 +1,10 @@
-
+/** @type {import('tailwindcss').Config} */
 
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
+
+  darkMode: "class",
+
   theme: {
     extend: {
       colors: {
@@ -12,11 +15,30 @@ export default {
         text: "#111827",
         muted: "#6B7280",
       },
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'], // Custom font
-      },
-  },
-  plugins: [],
-}
 
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
+
+      keyframes: {
+        zoomIn: {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.5)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+      },
+
+      animation: {
+        zoomIn: "zoomIn 0.8s ease-out forwards",
+        
+      },
+    },
+  },
+
+  plugins: [require("tailwindcss-animate")],
 };

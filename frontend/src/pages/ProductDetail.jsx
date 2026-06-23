@@ -83,8 +83,9 @@
 
 
 import { useParams, useNavigate } from "react-router-dom";
+import {useEffect} from "react";
 import { products } from "../data/data";
-
+import { FaWhatsapp } from "react-icons/fa";
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -93,8 +94,39 @@ export default function ProductDetail() {
 
   if (!product) return <p>Product not found</p>;
 
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
-    <div className="px-8 py-1 mt-2 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-lg">
+    <div className="px-8 py-6 mt-5 mb-5 max-w-4xl mx-auto bg-gray-200 rounded-lg shadow-lg">
+<div className="flex items-center gap-2 text-gray-500 text-sm mb-4">
+  <span
+    onClick={() => navigate("/")}
+    className="cursor-pointer hover:text-blue-500"
+  >
+    Home
+  </span>
+
+  <span>/</span>
+
+  <span
+    onClick={() => navigate("/products")}
+    className="cursor-pointer hover:text-blue-500"
+  >
+    Products
+  </span>
+
+  <span>/</span>
+
+  <span className="text-black font-semibold">
+    {product.name}
+  </span>
+</div>
       <h1 className="text-3xl font-bold mt-6 mb-4">Product Details</h1>
 
       <img
@@ -138,10 +170,29 @@ export default function ProductDetail() {
 
       <button
         onClick={() => navigate("/contact")}
-        className="mt-6 mb-4 bg-[#0B1F3A] text-white px-6 py-3 rounded-lg"
+        className="mt-6 mb-4 bg-[#0B1F3A] text-white px-6 py-5 rounded-lg"
       >
         Contact for Quote
       </button>
+      <div className="fixed bottom-0 left-0 w-full bg-white shadow-lg p-4 md:hidden z-50">
+  <button
+    onClick={() => navigate("/contact")}
+    className="w-full bg-[#0B1F3A] text-white py-4 rounded-xl text-lg font-bold"
+  >
+    Contact for Quote
+  </button>
+  
+</div>
+  <a
+  href={`https://wa.me/919340557647?text=Hello, I want details about ${product.name}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center justify-center gap-2 mt-4 bg-green-500 hover:bg-green-600 text-white py-4 rounded-xl font-bold transition"
+  >
+  <FaWhatsapp size={24} />
+  WhatsApp Inquiry
+  </a>
+
     </div>
   );
 }

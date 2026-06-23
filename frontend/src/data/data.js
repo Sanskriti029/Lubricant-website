@@ -96,7 +96,7 @@ export const products = [
   {
     id: "3",
     name: "HP AP 3 Grease",
-    category:"Automatic Greases",
+    category:"Automotive Greases",
     description:
       "All-purpose lithium-base grease with a high drop point.",
     pack_sizes: ["500g", "1kg", "5kg", "18kg", "180kg"],
@@ -247,7 +247,7 @@ export const products = [
     name: "Lithon EP2",
     category:"Refrigeration compression oils",
     category:"Industrial Oils",
-    category:"Automatic Greases",
+    category:"Automotive Greases",
     description:
       "High-quality lithium soap-based multipurpose grease.",
     pack_sizes: ["1kg", "5kg", "18kg", "180kg"],
@@ -311,7 +311,7 @@ export const products = [
   {
     id: "16",
     name: "Plutek 1 / 2",
-    category:"Automatic Greases",
+    category:"Automotive Greases",
     description:
       "Lubricants for pneumatic tools and rock drills.",
     pack_sizes: ["20L", "210L"],
@@ -535,7 +535,7 @@ export const products = [
   {
     "id": "30",
     "name": "HP Tisona",
-    category:"Automatic Greases",
+    category:"Automotive Greases",
     "description": "A high-quality agricultural spray oil specifically designed to control pests and diseases on fruit trees and plantation crops.",
     "pack_sizes": ["5L", "20L", "210L"],
     "usage": "Agricultural sector for crop protection.",
@@ -563,7 +563,7 @@ export const products = [
   {
     "id": "32",
     "name": "HP Multipurpose Grease 3",
-    category:"Automatic Greases",
+    category:"Automotive Greases",
     "description": "A high-quality lithium-base grease characterized by high drop point and excellent oxidation stability.",
     "pack_sizes": ["1kg", "2kg", "5kg", "18kg", "180kg"],
     "usage": "General purpose lubrication for automotive and industrial equipment.",

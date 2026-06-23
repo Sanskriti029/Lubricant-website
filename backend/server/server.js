@@ -7,7 +7,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "Missing");
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -15,6 +16,9 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS,
   },
 });
+
+const receiverEmail = process.env.RECEIVER_EMAIL || process.env.EMAIL_RECEIVER || "";
+console.log("RECEIVER_EMAIL:", receiverEmail ? "Loaded" : "Missing");
 
 app.post("/send-email", async (req, res) => {
   const {
@@ -30,8 +34,8 @@ app.post("/send-email", async (req, res) => {
   try {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: "New Contact Form Submission",
+      to: process.env.RECEIVER_EMAIL,
+      subject: "Inquiry received",
 
       html: `
         <h2>New Customer Inquiry</h2>

@@ -5,8 +5,15 @@ import instagram from "../assets/instagram.webp";
 import mail from "../assets/mail.png";
 import whatsapp from "../assets/whatsapp.png";
 import axios from "axios";
+import {useEffect} from "react";
 export default function Contact() {
+ useEffect(() => {
 
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
  const [form, setForm] = useState({
   name: "",
@@ -88,7 +95,8 @@ const products = [
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl grid md:grid-cols-2 gap-6">
         {/* Google Map */}
-        <div className="w-full h-[400px] md:h-auto rounded-2xl overflow-hidden shadow-lg">
+        <div className="w-full h-[400px] md:h-auto rounded-2xl overflow-hidden shadow-lg bg-white">
+          <h1 className="text-2xl font-bold mb-4 m-2">Our Location</h1>
           <iframe
             title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.5168727408586!2d80.8620831144718!3d24.571352162836167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39847efa4bf0455f%3A0xf7df454e162ab1de!2sVikas%20Automobiles%2C%20Satna%20(HP%20LUBE%20DISTRIBUTOR)!5e0!3m2!1sen!2sin!4v1652856740678!5m2!1sen!2sin"
@@ -383,7 +391,7 @@ const products = [
             <div className="bg-gray-50 rounded-2xl shadow-sm p-6">
               <h3 className="text-xl font-bold mb-4">Our Contact Information</h3>
               <p className="mb-2">Email: hpclcfasatna@gmail.com</p>
-              <p className="mb-2">Address: Vikas Automobiles, Near Yadav Dharmkanta, Rewa Road, Satna, Madhya Pradesh 485001</p>
+              <p className="mb-2">Address: Vikas Automobiles, Infront of Bajaj Finance Gahara Nala, Near Yadav Dharmkanta, Rewa Road, Satna, Madhya Pradesh 485001</p>
               <div className="flex items-center gap-3">
                 <img src={call} alt="Call Us" className="h-6 w-6" />
                 <a href="tel:+9827003016" target="_blank" rel="noopener noreferrer">

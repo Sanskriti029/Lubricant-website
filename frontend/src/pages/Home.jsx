@@ -1,5 +1,6 @@
 import home from "../assets/homepage.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import logo1 from "../assets/logo1.jpg";
 import acccement from "../assets/AccCement.jpg";
 import Adani from "../assets/Adani-power-logo.png";
@@ -18,8 +19,14 @@ import award9 from "../assets/awards9.jpeg";
 import grease from "../assets/images/AP 3.png";
 import engineoil from "../assets/images/Gear oil EP 90.jpg";
 import hydraulic from "../assets/images/ENKLO 32.jpg";
-
+import { useEffect } from "react";
 export default function Home() {
+   useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, []);
   const navigate = useNavigate();
 
   const testimonials = [
@@ -55,24 +62,48 @@ export default function Home() {
             </p>
 
             <p className="mt-4 text-gray-300">
-              Delivering premium industrial oils, greases, hydraulic fluids, and
-              lubrication solutions for heavy industries and machinery.
+              (SATNA, REWA, MAIHAR, SIDHI, SINGRAULI, PANNA, CHATTARPUR, TIKAMGARH)
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
-              <button
-                className="bg-[#FFD700] hover:bg-yellow-400 transition text-black px-6 py-3 rounded-lg font-semibold"
-                onClick={() => navigate("/products")}
-              >
-                View Products
-              </button>
+              <motion.button
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
+  transition={{ type: "spring", stiffness: 300 }}
+  className="
+    bg-[#FFD700]
+    hover:bg-yellow-400
+    text-black
+    px-6 py-3
+    rounded-lg
+    font-semibold
+    w-full md:w-auto
+    shadow-lg
+  "
+  onClick={() => navigate("/products")}
+>
+  View All Products
+</motion.button>
+      
 
-              <button
-                className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition"
+                <motion.button
+  whileHover={{ scale: 1.08 }}
+  whileTap={{ scale: 0.95 }}
+  transition={{ type: "spring", stiffness: 300 }}
+  className="
+    bg-[#FFD700]
+    hover:bg-yellow-400
+    text-black
+    px-6 py-3
+    rounded-lg
+    font-semibold
+    w-full md:w-auto
+    shadow-lg
+  "
                 onClick={() => navigate("/contact")}
               >
                 Contact Us
-              </button>
+              </motion.button>
             </div>
           </div>
 
@@ -93,7 +124,9 @@ export default function Home() {
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white p-5 rounded-xl shadow-md">
+          <div className="bg-white p-5  hover:scale-105
+    hover:-translate-y-1
+    hover:shadow-xl rounded-xl shadow-md">
             <h3 className="font-bold text-lg mb-2">Premium Quality</h3>
             <p>
               Wide range of high-quality lubricants for industrial and
@@ -101,7 +134,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl shadow-md">
+          <div className="bg-white p-5 rounded-xl shadow-md transition-all duration-300 ease-in-out
+    hover:scale-105
+    hover:-translate-y-1
+    hover:shadow-xl
+    active:scale-95">
             <h3 className="font-bold text-lg mb-2">25 Years Experience</h3>
             <p>
               Serving industries with trusted lubrication solutions for over two
@@ -109,7 +146,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white p-5 rounded-xl shadow-md">
+          <div className="bg-white  hover:scale-105 hover:-translate-y-1 hover:shadow-xl p-5 rounded-xl shadow-md">
             <h3 className="font-bold text-lg mb-2">Timely Delivery</h3>
             <p>
               Fast and reliable supply chain with outstanding customer support.
@@ -124,7 +161,11 @@ export default function Home() {
           Our Products
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ease-in-out
+    hover:scale-105
+    hover:-translate-y-1
+    hover:shadow-xl
+    active:scale-95">
             <img
               src={engineoil}
               alt="Engine Oil"
@@ -140,11 +181,15 @@ export default function Home() {
             
           </div>
 
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ease-in-out
+    hover:scale-105
+    hover:-translate-y-1
+    hover:shadow-xl
+    active:scale-95">
             <img
               src={hydraulic}
               alt="Hydraulic Oil"
-              className="h-56 w-full object-cover"
+              className="h-56 w-full object-cover "
             />
             <div className="p-4">
               <h3 className="font-bold text-xl">Hydraulic Oil</h3>
@@ -155,7 +200,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 ease-in-out
+    hover:scale-105
+    hover:-translate-y-1
+    hover:shadow-xl
+    active:scale-95">
             <img
               src={grease}
               alt="Industrial Grease"
@@ -171,12 +220,25 @@ export default function Home() {
             
           </div>
         </div>
-         <button
-    className="bg-[#FFD700] hover:bg-yellow-400 transition text-black px-6 py-3 rounded-lg font-semibold w-full md:w-auto items-center"
-    onClick={() => navigate("/products")}
-  >
-    View All Products
-  </button>
+     <button
+  className="
+    bg-[#FFD700]
+    hover:bg-yellow-400
+    text-black
+    px-6 py-3
+    rounded-lg
+    font-semibold
+    w-full md:w-auto
+    transition-all duration-300 ease-in-out
+    hover:scale-105
+    hover:-translate-y-1
+    hover:shadow-xl
+    active:scale-95
+  "
+  onClick={() => navigate("/products")}
+>
+  View All Products
+</button>
       </section>
 
       {/* CUSTOMERS */}
@@ -263,7 +325,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <img src={award1} alt="Award 1" className="rounded-xl shadow-md" />
 
-          <img src={award9} alt="Award 9" className="rounded-xl shadow-md" />
+          <img src={award9} alt="Award 9" className="mt-40 rounded-xl shadow-md " />
 
           <img src={award4} alt="Award 4" className="rounded-xl shadow-md" />
         </div>

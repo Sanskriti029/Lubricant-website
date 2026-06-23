@@ -1,41 +1,38 @@
-import React, { useState } from "react";
-import call from "../assets/call.png";
-import twitter from "../assets/twitter.png";
-import instagram from "../assets/instagram.webp";
-import mail from "../assets/mail.png";
-import whatsapp from "../assets/whatsapp.png";
-import thumbnail6 from "../assets/thumbnail6.jpg";
+import React, { useState, useRef } from "react";
 import Lubricants from "../assets/Lubricants products.jpg";
 import { products } from "../data/data";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import { useRef } from "react";
-const filteritems = [];
-
+import { useEffect } from "react";
 export default function Products() {
   const navigate = useNavigate();
-  const [activeCategory, setActiveCategory] = useState("All");
 
   const productsSectionRef = useRef(null);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  // Categories
   const categories = ["All", ...new Set(products.map((p) => p.category))];
 
+  // Filter Products
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
+
     const matchesCategory =
-      selectedCategory === "All" || product.category === selectedCategory;
+      selectedCategory === "All" ||
+      product.category === selectedCategory;
+
     return matchesSearch && matchesCategory;
   });
 
+  // Handle Category Click
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
 
-    // Trigger the scroll
+    // Smooth Scroll
     if (productsSectionRef.current) {
       productsSectionRef.current.scrollIntoView({
         behavior: "smooth",
@@ -44,75 +41,158 @@ export default function Products() {
     }
   };
 
+   useEffect(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, []);
+
   return (
     <>
+      {/* Hero Section */}
       <div className="px-4 py-12 text-center bg-gray-100">
-        <h1 className="mx-auto text-center text-5xl md:text-6xl font-extrabold text-[#1a4782] mb-8 tracking-tight">
-          Wide Range of Products available
+        <h1 className="mx-auto text-center text-4xl md:text-6xl font-extrabold text-[#1a4782] mt-2 mb-5 tracking-tight 
+    hover:animate-zoomIn underline">
+          Wide Range of Products Available
         </h1>
+
         <img
           src={Lubricants}
           alt="Lubricants"
-          className="mx-auto rounded-lg bg-gray-200 object-cover shadow-lg"
+          className="mx-auto rounded-2xl bg-gray-200 object-cover shadow-lg  w-full"
         />
       </div>
 
-      <div className="bg-gray-50 min-h-screen">
-        <div className="mx-4 max-w-8xl px-4 py-12 bg-[#1a4782] rounded-lg border-gray-300">
-          <div className="mb-4 relative">
+      {/* Main Section */}
+      <div className="bg-gray-50 min-h-screen px-4 py-8">
+
+        {/* Search Bar */}
+        <div className="max-w-7xl mx-auto mb-8">
+          <div className="relative">
             <input
               type="text"
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+              className="w-full p-4 pl-12 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg bg-white"
             />
-            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-          </div>
 
-          <div ref={productsSectionRef} className="flex flex-wrap gap-2 ">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategoryClick(category)}
-                className={`py-2 px-6 rounded-full transition-all duration-300 text-xl
-                   ${selectedCategory === category ? "bg-[#0B1F3A] text-white" : "bg-gray-200 text-gray-800 hover:bg-gray-300 text-xl"}`}
-              >
-                {category}
-              </button>
-            ))}
+            <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
           </div>
         </div>
 
-        <div className="mx-auto max-w-7xl px-4 py-12">
-          <h2 className="text-2xl font-bold text-gray-800 mb-8">Products</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 grou"
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-50 aspect-square w-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-3">
-                  <h1 className="text-lg text-[#0B1F3A] font-bold truncate">
-                    {product.name}
-                  </h1>
+        {/* Layout */}
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
 
-                  <button
-                    onClick={() => navigate(`/products/${product.id}`)}
-                    className="w-full bg-[#0B1F3A] text-white py-3 rounded-xl font-bold hover:bg-[#1a4782] transition duration-300 flex justify-center items-center gap-2"
-                  >
-                    View Details
-                  </button>
+          {/* Mobile Categories */}
+          <div className="lg:hidden overflow-x-auto scrollbar-hide">
+            <div className="flex gap-3 pb-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryClick(category)}
+                  className={`whitespace-nowrap px-5 py-3 rounded-full font-medium transition-all duration-300
+                  ${
+                    selectedCategory === category
+                      ? "bg-[#0B1F3A] text-white"
+                      : "bg-gray-200 text-gray-700"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Sidebar */}
+          <aside className="hidden lg:block lg:w-64 bg-white rounded-2xl shadow-md p-6 h-fit sticky top-24">
+            <h2 className="text-2xl font-bold text-[#0B1F3A] mb-6">
+              Categories
+            </h2>
+
+            <div className="flex flex-col gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => handleCategoryClick(category)}
+                  className={`text-left px-4 py-3 rounded-xl transition-all duration-300 font-medium
+                  ${
+                    selectedCategory === category
+                      ? "bg-[#0B1F3A] text-white"
+                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </aside>
+
+          {/* Products Section */}
+          <div className="flex-1" ref={productsSectionRef}>
+
+            {/* Heading */}
+            <div className="flex justify-between items-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+                Products
+              </h2>
+
+              {/* <p className="text-gray-500">
+                {filteredProducts.length} Products
+              </p> */}
+            </div>
+
+            {/* Products Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+
+              {filteredProducts.map((product) => (
+                <div
+                  key={product.id}
+                  className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group"
+                >
+
+                  {/* Image */}
+                  <div className="overflow-hidden">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-40 md:h-56 aspect-square w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-3 md:p-4">
+
+                    {/* Product Name */}
+                    <h1 className="text-sm md:text-lg text-[#0B1F3A] font-bold truncate mb-3">
+                      {product.name}
+                    </h1>
+
+                    {/* View Details */}
+                    <button
+                      onClick={() =>
+                        navigate(`/products/${product.id}`)
+                      }
+                      className="w-full bg-[#0B1F3A] text-white py-2 md:py-3 rounded-xl font-bold hover:bg-[#1a4782] transition duration-300 text-sm md:text-base"
+                    >
+                      View Details
+                    </button>
+                  </div>
                 </div>
+              ))}
+
+            </div>
+
+            {/* No Products */}
+            {filteredProducts.length === 0 && (
+              <div className="text-center py-20">
+                <h2 className="text-2xl font-bold text-gray-500">
+                  No products found
+                </h2>
               </div>
-            ))}
+            )}
+
           </div>
         </div>
       </div>
