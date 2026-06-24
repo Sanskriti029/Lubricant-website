@@ -2,9 +2,9 @@
 
 // IMPORT IMAGES
 
-import img20w40 from "../assets/images/20w40.jpg";
+import img20w40 from "../assets/images/a20w40.jpg";
 import img40 from "../assets/images/40.jpg";
-import img85W140 from "../assets/images/85W140.jpg";
+import img85W140 from "../assets/images/a85W140.jpg";
 import imga40 from "../assets/images/a40.jpg";
 import imgAP3 from "../assets/images/AP_3.png";
 import imgdrawmet from "../assets/images/drawmet.png";
