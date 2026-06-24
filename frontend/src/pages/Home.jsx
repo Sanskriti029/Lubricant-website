@@ -9,7 +9,7 @@ import EssarPower from "../assets/EssarPower.png";
 import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
 import kjs from "../assets/kjs.png";
 import jcb from "../assets/jcb.jpg";
-import ultratech from "../assets/ub.png";
+import ultratech from "../assets/ultratech.png";
 
 import award1 from "../assets/awards1.jpeg";
 import award4 from "../assets/awards4.jpeg";

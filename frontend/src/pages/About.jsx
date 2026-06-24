@@ -10,7 +10,7 @@ import EssarPower from "../assets/EssarPower.png";
 import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
 import kjs from "../assets/kjs.png";
 import jcb from "../assets/jcb.jpg";
-import ultratech from "../assets/ub.png";
+import ultratech from "../assets/ultratech.png";
 import award from "../assets/awards9.jpeg";
 import { useEffect } from "react";
 export default function About() {
