@@ -1,10 +1,10 @@
 import React from "react";
 import Aboutbg from "../assets/Aboutbg.png";
-import bg from "../assets/1.jpg";
-import h1 from "../assets/h1.jpg";
+import bg from "../assets/about_bg.jpg";
+import h1 from "../assets/office.jpg";
 import h2 from "../assets/h2.jpg";
 import acccement from "../assets/AccCement.jpg";
-import Adani from "../assets/Adani-power-logo.png";
+import Adani from "../assets/Adani_power_logo.png";
 import birla from "../assets/AdityaBirlaCement.jpg";
 import EssarPower from "../assets/EssarPower.png";
 import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
@@ -24,17 +24,17 @@ export default function About() {
   return (
     <>
     <div className="px-4 py-6 text-center bg-gray-50 min-h-screen">
-  <div className="max-w-6xl mx-auto">
+  <div className="max-w-8xl mx-auto">
     <h1 className="mx-auto text-center text-4xl md:text-6xl font-extrabold text-[#1a4782] mt-2 mb-5 tracking-tight 
     hover:animate-zoomIn underline
   ">
       About Us
     </h1>
     
-    <div className="relative group w-full flex justify-center px-4">
+    {/* <div className="relative group w-full flex justify-center px-4"> */}
   
   {/* Premium Glow Effect */}
-  <div
+  {/* <div
     className="
       absolute
       -inset-1
@@ -48,7 +48,7 @@ export default function About() {
       transition
       duration-700
     "
-  ></div>
+  ></div> */}
 
   {/* Image */}
   <img
@@ -57,11 +57,7 @@ export default function About() {
     className="
       relative
       w-full
-      max-w-6xl
-      h-[250px]
-      sm:h-[350px]
-      md:h-[450px]
-      lg:h-[550px]
+      max-w-8xl
       object-cover
       rounded-2xl
       shadow-2xl
@@ -70,7 +66,7 @@ export default function About() {
       group-hover:scale-[1.02]
     "
   />
-</div>
+{/* </div> */}
   </div>
 </div>
       <div className=" mx-auto min-w-full items-center text-xl rounded shadow-lg">

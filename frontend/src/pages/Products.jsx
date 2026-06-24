@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import Lubricants from "../assets/Lubricants products.jpg";
+import Lubricants from "../assets/Lubricants_products.jpg";
 import { products } from "../data/data";
 import { useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";

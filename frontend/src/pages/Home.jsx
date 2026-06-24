@@ -1,9 +1,9 @@
 import home from "../assets/homepage.png";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import logo1 from "../assets/logo1.jpg";
+import logo1 from "../assets/logo_1.jpg";
 import acccement from "../assets/AccCement.jpg";
-import Adani from "../assets/Adani-power-logo.png";
+import Adani from "../assets/Adani_power_logo.png";
 import birla from "../assets/AdityaBirlaCement.jpg";
 import EssarPower from "../assets/EssarPower.png";
 import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
