@@ -383,7 +383,7 @@ export const products = [
     usage: "Luxury passenger vehicles.",
     application: "BS-VI compliant engines.",
     lifetime: "15,000 - 20,000 km",
-    performance: "Meets API SN",
+    performance: "Meets API SP",
     features: "Fuel economy benefits.",
     rating: 4.9,
     image: imgfuturx,
