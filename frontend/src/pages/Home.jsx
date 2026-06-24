@@ -16,9 +16,9 @@ import award4 from "../assets/awards4.jpeg";
 import award9 from "../assets/awards9.jpeg";
 
 // Product Images
-import grease from "../assets/images/AP 3.png";
-import engineoil from "../assets/images/Gear oil EP 90.jpg";
-import hydraulic from "../assets/images/ENKLO 32.jpg";
+import grease from "../assets/images/AP_3.png";
+import engineoil from "../assets/images/Gear_oil_EP_90.jpg";
+import hydraulic from "../assets/images/ENKLO_32.jpg";
 import { useEffect } from "react";
 export default function Home() {
    useEffect(() => {
