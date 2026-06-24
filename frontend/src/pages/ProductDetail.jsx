@@ -184,7 +184,7 @@ export default function ProductDetail() {
   
 </div>
   <a
-  href={`https://wa.me/919340557647?text=Hello, I want details about ${product.name}`}
+  href={`https://wa.me/919827003016?text=Hello, I want details about ${product.name}`}
   target="_blank"
   rel="noopener noreferrer"
   className="flex items-center justify-center gap-2 mt-4 bg-green-500 hover:bg-green-600 text-white py-4 rounded-xl font-bold transition"
