@@ -299,7 +299,7 @@ Satna, Madhya Pradesh - 485001
             href="tel:+919827003016"
             className="text-blue-600 font-semibold ml-2"
           >
-            +91 9827006016
+            +91 9827003016
           </a>
         </p>
 
