@@ -51,7 +51,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-              High Performance Industrial Lubricants for Every Industry
+              High Performance Industrial And Automotive Lubricants for Every Industry
             </h1>
 
             <p className="mt-4 text-lg text-gray-200">
@@ -62,7 +62,7 @@ export default function Home() {
             </p>
 
             <p className="mt-4 text-gray-300">
-              (SATNA, REWA, MAIHAR, SIDHI, SINGRAULI, PANNA, CHATTARPUR, TIKAMGARH)
+              (SATNA, REWA, MAIHAR, PANNA, CHATTARPUR, TIKAMGARH)
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mt-6">

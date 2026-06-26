@@ -165,7 +165,7 @@ export default function Products() {
                   <div className="p-3 md:p-4">
 
                     {/* Product Name */}
-                    <h1 className="text-sm md:text-lg text-[#0B1F3A] font-bold truncate mb-3">
+                    <h1 className="text-sm md:text-lg text-[#0B1F3A] font-bold truncate mb-3 text-wrap">
                       {product.name}
                     </h1>
 
