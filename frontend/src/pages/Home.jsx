@@ -295,7 +295,7 @@ export default function Home() {
         <p className="mt-4 text-lg">
           Contact:
           <a
-            href="tel:+919827006016"
+            href="tel:+919827003016"
             className="text-blue-600 font-semibold ml-2"
           >
             +91 9827006016
