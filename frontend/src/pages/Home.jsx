@@ -288,8 +288,9 @@ export default function Home() {
         </h2>
 
         <p className="mt-2 text-lg md:text-xl font-bold">
-          Vikas Automobiles, Near Yadav Dharmkanta, Rewa Road, Satna, Madhya
-          Pradesh 485001
+          Vikas Automobiles, Infront of Bajaj Finance Gahara Nala,
+Near Yadav Dharmkanta, Rewa Road,
+Satna, Madhya Pradesh - 485001
         </p>
 
         <p className="mt-4 text-lg">
