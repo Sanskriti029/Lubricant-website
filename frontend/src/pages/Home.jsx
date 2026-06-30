@@ -10,11 +10,14 @@ import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
 import kjs from "../assets/kjs.png";
 import jcb from "../assets/jcb.jpg";
 import ultratech from "../assets/ultratech.png";
+import dalmia from "../assets/dalmia.jpg";
+import jaypee from "../assets/jaypee.png";
+import prism from "../assets/prism.png";
 
 import award1 from "../assets/awards1.jpeg";
 import award4 from "../assets/awards4.jpeg";
 import award9 from "../assets/awards9.jpeg";
-
+import award from "../assets/bg02.jpeg";
 // Product Images
 import grease from "../assets/images/AP_3.png";
 import engineoil from "../assets/images/Gear_oil_EP_90.jpg";
@@ -258,8 +261,14 @@ export default function Home() {
           <img src={jcb} alt="JCB" className="mx-auto" />
           <img src={kjs} alt="KJS" className="mx-auto" />
           <img src={mpbirla} alt="MP Birla" className="mx-auto" />
+          <img src={ultratech} alt="Ultratech" className="mx-auto" />
+          <img src={dalmia} alt="Dalmia" className="mx-auto" />
+          <img src={EssarPower} alt="Essar Power" className="mx-auto" />
+          <img src={jaypee} alt="Jaypee" className="mx-auto" /> 
+          <img src={prism} alt="Prism" className="mx-auto" />
         </div>
       </section>
+          
 
       {/* TESTIMONIALS */}
       {/* <section className="bg-[#0B1F3A] text-white p-6 md:p-10 rounded-xl">
@@ -323,12 +332,12 @@ Satna, Madhya Pradesh - 485001
           Recognized for excellence and outstanding performance
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <img src={award1} alt="Award 1" className="rounded-xl shadow-md" />
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-6">
+          <img src={award1} alt="Award 1" className="rounded-xl shadow-md w-full h-full sm:col-span-1" />
 
-          <img src={award9} alt="Award 9" className="mt-40 rounded-xl shadow-md " />
+          <img src={award} alt="Award 9" className="rounded-xl shadow-md w-full h-full sm:col-span-2" />
 
-          <img src={award4} alt="Award 4" className="rounded-xl shadow-md" />
+          <img src={award4} alt="Award 4" className="rounded-xl shadow-md w-full h-full sm:col-span-1" />
         </div>
 
         <div className="text-center mt-8">

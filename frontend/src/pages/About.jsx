@@ -10,8 +10,13 @@ import EssarPower from "../assets/EssarPower.png";
 import mpbirla from "../assets/M.P_Birla_Group_logo.jpg";
 import kjs from "../assets/kjs.png";
 import jcb from "../assets/jcb.jpg";
+
 import ultratech from "../assets/ultratech.png";
-import award from "../assets/awards9.jpeg";
+import dalmia from "../assets/dalmia.jpg";
+import jaypee from "../assets/jaypee.png";
+import prism from "../assets/prism.png";
+import award from "../assets/bg02.jpeg";
+
 import { useEffect } from "react";
 export default function About() {
 
@@ -233,6 +238,31 @@ export default function About() {
       <img
         src={mpbirla}
         alt="mpbirla"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+      <img
+        src={jaypee}
+        alt="jaypee"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+      <img
+        src={prism}
+        alt="prism"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+      <img
+        src={dalmia}
+        alt="dalmia"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+      <img
+        src={ultratech}
+        alt="ultratech"
+        className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
+      />
+      <img
+        src={EssarPower}
+        alt="essarpower"
         className="w-24 sm:w-28 md:w-32 object-contain hover:scale-110 transition duration-300"
       />
     </div>
