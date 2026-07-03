@@ -58,6 +58,9 @@ const products = [
   "Other"
 ];
 
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "sanskritikhandelwal029@gmail.com";
+  const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_URL || `https://formsubmit.co/ajax/${contactEmail}`;
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -66,12 +69,18 @@ const products = [
   e.preventDefault();
 
   try {
-    const response = await axios.post(
-      "http://localhost:5000/send-email",
-      form
-    );
+    const response = await axios.post(FORMSPREE_ENDPOINT, {
+      ...form,
+      _captcha: "false",
+    }, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
 
-    alert(response.data.message);
+    const successMessage = response.data?.message || "Message sent successfully";
+    alert(successMessage);
 
     setForm({
       name: "",
@@ -85,7 +94,7 @@ const products = [
 
   } catch (error) {
     console.error(error);
-    alert("Failed to send message");
+    alert(`Failed to send message. Please try again or email ${contactEmail} directly.`);
   }
 };
   return (
